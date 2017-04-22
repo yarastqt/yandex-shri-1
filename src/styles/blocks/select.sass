@@ -1,0 +1,52 @@
+.select
+    position: relative
+
+    &:after
+        content: ''
+        position: absolute
+        bottom: 8px
+        right: 8px
+        background-image: svg-load('arrow-down.svg', fill=$color-black-2)
+        width: 24px
+        height: 24px
+
+    &__control
+        +tohch-hover
+            color: $color-black-1
+            border-color: $color-black-1
+        font: inherit
+        font-size: 1.4rem
+        background-color: $color-white-1
+        color: $color-black-2
+        padding: 0 80px 0 16px
+        border: 1px solid $color-gray-1
+        border-radius: 2px
+        height: 40px
+        min-width: 216px
+        transition: border-color 250ms $cubic-bezier, color 250ms $cubic-bezier
+        appearance: none
+        touch-action: manipulation
+
+        &_active
+            color: $color-purple-1
+
+            & + .select__clear
+                opacity: 1
+                visibility: visible
+
+    &__clear
+        +tohch-hover
+            background-image: svg-load('close.svg', fill=$color-purple-1)
+        position: absolute
+        right: 40px
+        bottom: 0
+        background-image: svg-load('close.svg', fill=$color-black-2)
+        background-position: center
+        background-repeat: no-repeat
+        cursor: pointer
+        opacity: 0
+        width: 40px
+        height: 40px
+        transition: background-image 150ms $cubic-bezier, opacity 150ms $cubic-bezier, visibility 150ms $cubic-bezier
+        visibility: hidden
+        z-index: 100

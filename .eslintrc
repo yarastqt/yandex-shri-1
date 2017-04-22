@@ -1,0 +1,72 @@
+{
+    "extends": "airbnb/base",
+    "plugins": ["import"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "quotes": [0, "single", {
+            "avoidEscape": true
+        }],
+        "semi": [2, "always"],
+        "no-unused-vars": ["error", {
+            "vars": "all",
+            "args": "after-used"
+        }],
+        "global-require": 0,
+        "quote-props": [2, "as-needed"],
+        "max-len": [1, 120],
+        "no-unused-expressions": [2, {
+            "allowShortCircuit": true,
+            "allowTernary": true
+        }],
+        "no-confusing-arrow": 0,
+        "no-use-before-define": [2, {
+            "functions": true
+        }],
+        "no-param-reassign": ["error", {
+            "props": false
+        }],
+        "import/extensions": ["error", {
+            "js": "never",
+            "json": "always"
+        }],
+        "import/prefer-default-export": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/no-unresolved": 0,
+        "consistent-return": "error",
+        "no-restricted-syntax": ["error", "WithStatement"],
+        "no-continue": 0,
+        "arrow-parens": [2, "always"],
+        "arrow-body-style": ["error", "as-needed"],
+        "no-multiple-empty-lines": [1, {
+            "max": 2
+        }],
+        "no-mixed-operators": 0,
+        "class-methods-use-this": 0,
+        "brace-style": ["error", "1tbs", {
+            "allowSingleLine": true
+        }],
+        "indent": [1, 4],
+        "comma-dangle": ["error", "never"],
+        "no-bitwise": ["error", {
+            "allow": ["~"]
+        }],
+        "no-underscore-dangle": 0
+    },
+    "parser": "babel-eslint",
+    "settings": {
+        "import/resolve": {
+            "moduleDirectory": ["node_modules", "src"]
+        }
+    }
+}

@@ -1,0 +1,153 @@
+.schedule
+    display: flex
+    flex: 1 0 auto
+    flex-direction: column
+
+    &__message
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        cursor: default
+        margin: auto
+        user-select: none
+
+    &__message-icon
+        background-image: url(~../assets/i/list.svg)
+        background-repeat: no-repeat
+        background-size: 100%
+        margin-bottom: 16px
+        width: 120px
+        height: 92px
+
+    &__message-text
+        font-size: 1.4rem
+        color: $color-purple-1
+
+    &__list
+        display: flex
+        flex-direction: column
+        flex: 1 0 auto
+
+        &_rows
+            .schedule__item
+                margin-top: 16px
+
+                &:nth-child(1)
+                    margin-top: 0
+
+            .schedule__item-meta
+                +bp(min, $screen-tablet-up)
+                    flex-direction: row
+                flex-direction: column
+
+            .schedule__item-prop
+                +bp(min, $screen-tablet-up)
+                    margin-left: 16px
+
+                    &:first-of-type
+                        margin-left: 0
+
+                &_last
+                    margin-left: auto
+
+        &_grid
+            flex-direction: row
+            flex-wrap: wrap
+
+            .schedule__item
+                +bp(max, $screen-tablet)
+                    margin-top: 16px
+                    flex: 0 0 100%
+
+                    &:nth-child(1)
+                        margin-top: 0
+
+                +bp(min, $screen-laptop)
+                    margin-right: .5%
+                    flex: 0 0 33%
+
+                    &:nth-child(3n)
+                        margin-right: 0
+
+                    &:nth-child(-n+3)
+                        margin-top: 0
+
+                +bp($screen-tablet, $screen-tablet-end)
+                    margin-right: .5%
+                    flex: 0 0 49.75%
+
+                    &:nth-child(2n)
+                        margin-right: 0
+
+                    &:nth-child(-n+2)
+                        margin-top: 0
+
+                display: flex
+                justify-content: space-between
+                flex-direction: column
+                margin-top: 8px
+
+            .schedule__item-meta
+                flex-direction: column
+
+            .schedule__item-prop_last
+                position: absolute
+
+    &__item
+        +tohch-hover
+            z-index: 1
+            border-color: $color-gray-2
+            box-shadow: 0 4px 10px 0 rgba($color-gray-1, .6)
+            .schedule__item-link
+                color: $color-purple-1
+        position: relative
+        background-color: $color-white-1
+        box-shadow: 0 4px 10px 0 rgba($color-gray-1, .2)
+        padding: 16px 24px
+        border: 1px solid $color-gray-1
+        border-radius: 2px
+        transition: box-shadow 250ms $cubic-bezier, border-color 150ms $cubic-bezier
+
+    &__item-link
+        +tohch-hover
+            color: rgba($color-purple-1, .5) !important
+        color: $color-black-1
+        transition: color 150ms $cubic-bezier
+        text-decoration: none
+        touch-action: manipulation
+
+    &__item-name
+        font-size: 2rem
+        margin-bottom: 16px
+
+    &__item-meta
+        display: flex
+        position: relative
+
+    &__item-prop
+        display: flex
+        align-items: center
+        padding: 2px 0
+
+        &_last
+            position: absolute
+            bottom: 0
+            right: 0
+            padding: 4px 0
+
+            +bp(min, $screen-laptop)
+                position: relative
+
+    &__item-prop-text
+        font-size: 1.4rem
+        padding: 4px 0
+        margin-left: 8px
+
+        &_highlight
+            +tohch-hover
+                color: rgba($color-purple-1, .5)
+            color: $color-purple-1
+            cursor: pointer
+            transition: color 150ms $cubic-bezier
+            touch-action: manipulation

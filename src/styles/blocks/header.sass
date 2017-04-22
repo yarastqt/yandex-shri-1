@@ -1,0 +1,31 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    background-color: $color-white-1
+    box-shadow: 0 4px 10px 0 rgba($color-gray-1, .2)
+    border-bottom: 1px solid $color-gray-1
+    height: 64px
+    z-index: 1000
+
+    &__in
+        +bp(min, $screen-laptop)
+            padding: 0 24px
+        display: flex
+        align-items: center
+        padding: 0 16px
+        margin: 0 auto
+        height: 100%
+        max-width: 1240px
+
+    &__link
+        touch-action: manipulation
+
+    &__logo
+        +tohch-hover
+            opacity: .8
+        background-image: url(~../assets/i/logo.svg)
+        width: 245px
+        height: 40px
+        transition: opacity 150ms $cubic-bezier

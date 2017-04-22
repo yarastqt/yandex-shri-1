@@ -1,0 +1,64 @@
+.content
+    flex: 1 0 auto
+    display: flex
+
+    &__in
+        +bp(min, $screen-laptop)
+            padding: 32px 24px
+        display: flex
+        flex-direction: column
+        padding: 32px 16px
+        margin: 0 auto
+        max-width: 1240px
+        flex: 1 0 100%
+
+    &__heading
+        display: flex
+        justify-content: space-between
+        flex: 0 0 auto
+        margin-bottom: 32px
+
+    &__header
+        font-size: 3.2rem
+        font-weight: 100
+        margin-right: 16px
+
+    &__actions
+        display: flex
+
+    &__actions-group
+        display: flex
+
+        &:last-of-type
+            margin-right: 0
+
+        &:nth-child(1)
+            +bp(min, $screen-tablet)
+                margin-right: 16px
+
+        &:nth-child(2)
+            +bp(min, $screen-tablet)
+                display: block
+            display: none
+
+    &__actions-button.button
+        margin-right: 8px
+        min-width: 40px
+
+        &:last-of-type
+            margin-right: 0
+
+        &.button_primary
+            .icon_filter
+                background-image: svg-load('filter.svg', fill=$color-purple-1)
+
+            .icon_rows
+                background-image: svg-load('rows.svg', fill=$color-purple-1)
+
+            .icon_grid
+                background-image: svg-load('grid.svg', fill=$color-purple-1)
+
+        .button__text
+            +bp(min, $screen-tablet)
+                display: block
+            display: none

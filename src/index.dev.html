@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Расписание">
+    <title>Проект «Мобилизация» - расписание</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/i/icon-ios.png">
+    <link type="image/png" rel="icon" href="/assets/i/icon.png" sizes="192x192">
+</head>
+<body class="page">
+    <div class="main">
+        <div class="header">
+            <div class="header__in">
+                <a href="/" class="header__link">
+                    <div class="header__logo"></div>
+                </a>
+            </div>
+        </div>
+        <div class="viewport viewport_overflow">
+            <div class="content">
+                <div class="content__in">
+                    <div class="content__heading">
+                        <h1 class="content__header">Расписание лекций</h1>
+                        <div class="content__actions">
+                            <div class="content__actions-group">
+                                <button type="button" class="button button_secondary content__actions-button" data-filter>
+                                    <span class="button__in">
+                                        <span class="button__text">Показать фильтры</span>
+                                        <i class="icon icon_filter"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="content__actions-group">
+                                <button type="button" class="button button_secondary content__actions-button" data-layout="rows">
+                                    <span class="button__in">
+                                        <i class="icon icon_rows"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="button button_secondary content__actions-button" data-layout="grid">
+                                    <span class="button__in">
+                                        <i class="icon icon_grid"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters">
+                        <div class="filters__list"></div>
+                    </div>
+                    <div class="schedule">
+                        <div class="schedule__list schedule__list_rows"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer__in">
+                    <div class="footer__copyright">Проект «Мобилизация» &copy; 2017</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal__in">
+                <div class="modal__container">
+                    <div class="modal__container-in">
+                        <div class="modal__container-photo">
+                            <img src="" class="image" alt="">
+                        </div>
+                        <div class="modal__container-info">
+                            <div class="modal__container-title"></div>
+                            <div class="modal__container-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__overlay"></div>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="bundle.js"></script>
+</body>
+</html>

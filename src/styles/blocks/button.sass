@@ -1,0 +1,35 @@
+.button
+    font: inherit
+    font-size: 1.4rem
+    cursor: pointer
+    padding: 0 8px
+    border-radius: 2px
+    height: 40px
+    min-width: 40px
+    transition: border-color 250ms $cubic-bezier, background-color 150ms $cubic-bezier, color 150ms $cubic-bezier
+    user-select: none
+    touch-action: manipulation
+
+    &_primary
+        +tohch-hover
+            background-color: rgba($color-purple-1, .1)
+        background-color: rgba($color-purple-1, .05)
+        color: $color-purple-1
+        border: 1px solid $color-purple-1
+
+    &_secondary
+        +tohch-hover
+            color: $color-black-1
+            border-color: $color-black-1
+        background-color: transparent
+        color: $color-black-2
+        border: 1px solid $color-black-2
+
+    &__in
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: row-reverse
+
+    &__text
+        margin-left: 8px

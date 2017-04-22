@@ -1,0 +1,115 @@
+.modal
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    visibility: hidden
+    z-index: 9000
+
+    &_visible
+        visibility: visible
+
+        .modal__container
+            opacity: 1
+            transform: translateY(0)
+            visibility: visible
+
+        .modal__overlay
+            opacity: 1
+            visibility: visible
+
+    &__in
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        height: 100%
+
+    &__container
+        +bp(min, $screen-laptop)
+            margin-top: 0
+            border-radius: 2px
+            flex: 0 0 auto
+        flex: 0 1 100%
+        position: relative
+        background-color: $color-white-1
+        box-shadow: 0 2px 10px rgba($color-black-0, .5)
+        margin: 64px 20px 0 20px
+        border-radius: 2px 2px 0 0
+        opacity: 0
+        overflow-y: scroll
+        max-width: 800px
+        transform: translateY(10px)
+        transition: opacity 250ms $cubic-bezier, transform 150ms $cubic-bezier, visibility 250ms $cubic-bezier
+        visibility: hidden
+        z-index: 9200
+        -ms-overflow-style: -ms-autohiding-scrollbar
+        -webkit-overflow-scrolling: touch
+
+        &::-webkit-scrollbar
+            display: none
+
+    &__container-in
+        +bp(min, $screen-tablet)
+            flex-direction: row
+        display: flex
+        flex-direction: column
+        padding: 16px 24px
+
+    &__container-photo
+        flex: 0 0 200px
+
+        .image
+            padding: 4px
+            margin: 0 auto
+            border: 1px solid $color-purple-1
+            border-radius: 50%
+            width: 200px
+            height: 200px
+
+    &__container-info
+        +bp(min, $screen-tablet)
+            padding: 0 0 0 24px
+        padding: 24px 0 0
+
+    &__container-title
+        font-size: 2.4rem
+        margin-bottom: 24px
+
+        &:first-letter
+            color: $color-purple-1
+
+    &__container-text
+        font-size: 1.6rem
+
+    &__overlay
+        +tohch-hover
+            &:after
+                opacity: 1
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: rgba($color-black-1, .9)
+        cursor: pointer
+        opacity: 0
+        transition: opacity 250ms $cubic-bezier, visibility 250ms $cubic-bezier
+        visibility: hidden
+        z-index: 9100
+
+        &:after
+            content: ''
+            position: absolute
+            top: 15px
+            right: 10px
+            background-image: svg-load('close.svg', fill=$color-white-1)
+            background-position: 0 50%
+            background-repeat: no-repeat
+            background-size: 100%
+            opacity: .5
+            width: 34px
+            height: 34px
+            transition: opacity 250ms $cubic-bezier
+            z-index: 9100
