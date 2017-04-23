@@ -26,7 +26,7 @@ const webpackConfiguration = {
     output: {
         filename: 'assets/js/[name].bundle.[chunkhash].js',
         path: path.join(__dirname, '../build'),
-        publicPath: '/'
+        publicPath: process.env.public || '/'
     },
     module: {
         rules: [

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./development/server.js",
     "prod": "cross-env NODE_ENV=production gulp --gulpfile ./development/gulpfile.js",
+    "github": "cross-env NODE_ENV=production --env.public=/yandex-shri-1/ gulp --gulpfile ./development/gulpfile.js",
     "lint": "eslint --ext .js ./src ./development; exit 0"
   },
   "author": "Tropin Eugeniy",
