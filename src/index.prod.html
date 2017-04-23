@@ -8,15 +8,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Расписание">
     <title>Проект «Мобилизация» - расписание</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/assets/i/icon-ios.png">
-    <link type="image/png" rel="icon" href="/assets/i/icon.png" sizes="192x192">
+    <link rel="manifest" href="<%= htmlWebpackPlugin.options.publicPath %>manifest.json">
+    <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.publicPath %>assets/i/icon-ios.png">
+    <link type="image/png" rel="icon" href="<%= htmlWebpackPlugin.options.publicPath %>assets/i/icon.png" sizes="192x192">
 </head>
 <body class="page">
     <div class="main">
         <div class="header">
             <div class="header__in">
-                <a href="/" class="header__link">
+                <a href="<%= htmlWebpackPlugin.options.publicPath %>" class="header__link">
                     <div class="header__logo"></div>
                 </a>
             </div>

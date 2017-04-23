@@ -117,6 +117,7 @@ const webpackConfiguration = {
         }),
         new ExtractTextPlugin('assets/css/[name].bundle.[chunkhash].css'),
         new HtmlWebpackPlugin({
+            publicPath: process.env.public || '/',
             template: path.join(__dirname, '../src/index.prod.html'),
             minify: {
                 collapseBooleanAttributes: true,
