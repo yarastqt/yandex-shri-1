@@ -7,6 +7,7 @@ const gulp = require('gulp');
 const clean = require('gulp-clean');
 const webpack = require('webpack');
 const sequence = require('run-sequence');
+const template = require('gulp-template');
 
 const webpackConfig = require('./webpack.config.prod');
 
@@ -26,6 +27,7 @@ gulp.task('copy-icons', () => (
 
 gulp.task('copy-manifest', () => (
     gulp.src(path.join(__dirname, '../src/manifest.json'))
+        .pipe(template({ publicPath: process.env.public || '/' }))
         .pipe(gulp.dest(path.join(__dirname, '../build')))
 ));
 

@@ -5,10 +5,10 @@
     "background_color": "#fff",
     "theme_color": "#000",
     "orientation": "any",
-    "start_url": "/",
+    "start_url": "<%= publicPath %>",
     "icons": [
         {
-            "src": "/assets/i/icon.png",
+            "src": "<%= publicPath %>assets/i/icon.png",
             "sizes": "192x192",
             "type": "image/png"
         }
